@@ -5,6 +5,18 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          hostname: '*',
+          base: 'dist',
+          livereload: true,
+          open: true
+        }
+      }
+    },
+
     clean: ['dist'],
 
     watch: {
@@ -30,7 +42,7 @@ module.exports = function(grunt) {
 
     jshint: {
       files: [
-        'src/js/app/**/*.js'
+        'src/js/*.js'
       ],
       options: {
         jshintrc: '.jshintrc'
@@ -101,6 +113,7 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -117,6 +130,6 @@ module.exports = function(grunt) {
   grunt.registerTask('minify', ['jshint', 'uglify', 'cssmin', 'copy']);
   grunt.registerTask('onChange', ['newer:jshint', 'newer:sass', 'newer:autoprefixer:single_file', 'concat', 'newer:copy', 'notify:watch']);
   grunt.registerTask('build', ['clean', 'jshint', 'sass', 'concat', 'copy',]);
-  grunt.registerTask('server', ['clean', 'onChange', 'watch']);
+  grunt.registerTask('server', ['clean', 'connect', 'onChange', 'watch']);
 
 };
