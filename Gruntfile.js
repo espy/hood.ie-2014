@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 
     autoprefixer: {
       single_file: {
-        src: 'dist/main.min.css'
+        src: 'dist/css/main.min.css'
       },
     },
 
