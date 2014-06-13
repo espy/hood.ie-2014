@@ -23,7 +23,150 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+// Mixins
+
+.clearfix{
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
+
+// Colors
+
+// HoodieColors
+$hoodieBlue:     #312783;
+$hoodieGreen:    #0B8E36;
+$hoodieYellow:   #F9B233;
+$hoodieOrange:   #E94E1B;
+$hoodieBrown:    #693C10;
+$hoodieRed:      #BE1522;
+
+// Other colors:
+$white:          #FFFFFF;
+$darkGrey:       #414040;
+$nearBlack:      #282726;
+$mediumBrown:    #373435;
+$lightBeige:     #F8F5F3;
+
+$paleBlue:       #C2E0EB;
+$paleGreen:      #8FC2A2;
+$paleYellow:     #F7EF9D;
+$paleOrange:     #F6C28A;
+$paleRed:        #E0856B;
+
+$pageBackground: $lightBeige;
+
+// Whitespace
+
+$outsideMargin:  1rem;
+
+// Dimensions
+
+$swatchDiameter: 120px;
+
+// Typography
+
+body{
+  font-family: 'bariol_regular';
+  background: $pageBackground;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  margin-left: $outsideMargin;
+}
+
 h1{
   font-family: 'bariol_bold';
-  color: black;
+  color: $nearBlack;
 }
+
+// Elements
+
+p{
+  &.note{
+    &:before{
+      display: block;
+      position: absolute;
+      z-index: -1;
+      padding: 0 1em;
+      margin-left: -4rem;
+      border-radius: 1em;
+      margin-top: -.4rem;
+      content: "";
+      width: 5em;
+      height: 2em;
+      background-color: $paleYellow;
+    }
+  }
+}
+
+.slash{
+  &:before{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    padding: 0 1em;
+    margin-left: -1.5rem;
+    border-radius: 1em;
+    margin-top: -.4rem;
+    content: "";
+    width: 1em;
+    height: 2em;
+    background-color: $paleBlue;
+    transform: rotate(-72deg);
+  }
+}
+
+.block{
+  width: 36rem;
+  margin: auto;
+  @extend .clearfix;
+  aside{
+    width: 25%;
+    float: left;
+    text-align: right;
+    padding-right: 1rem;
+  }
+  .content{
+    width: 75%;
+    float: right;
+  }
+}
+
+.swatch{
+  width: $swatchDiameter;
+  height: $swatchDiameter;
+  border-radius: 50%;
+  display: inline-block;
+  color: $white;
+  font-size: 1.5rem;
+  font-family: 'bariol_bold';
+  line-height: $swatchDiameter;
+  text-align: center;
+  margin: .5em;
+  &.hoodieBlue{
+    background-color: $hoodieBlue;
+  }
+  &.hoodieGreen{
+    background-color: $hoodieGreen;
+  }
+  &.hoodieYellow{
+    background-color: $hoodieYellow;
+  }
+  &.hoodieOrange{
+    background-color: $hoodieOrange;
+  }
+  &.hoodieBrown{
+    background-color: $hoodieBrown;
+  }
+  &.hoodieRed{
+    background-color: $hoodieRed;
+  }
+}
+
