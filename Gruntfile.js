@@ -108,6 +108,13 @@ module.exports = function(grunt) {
         dest: 'dist/',
         filter: 'isFile'
       },
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
 
   });
@@ -124,11 +131,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   // Default task.
   grunt.registerTask('minify', ['jshint', 'uglify', 'cssmin', 'copy']);
   grunt.registerTask('onChange', ['newer:jshint', 'newer:sass', 'newer:autoprefixer:single_file', 'concat', 'newer:copy', 'notify:watch']);
   grunt.registerTask('build', ['clean', 'jshint', 'sass', 'concat', 'copy',]);
   grunt.registerTask('server', ['clean', 'connect', 'onChange', 'watch']);
+  grunt.registerTask('deploy', ['build', 'gh-pages']);
 
 };

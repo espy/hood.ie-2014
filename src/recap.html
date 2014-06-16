@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design Sprint Recap</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+  <header>
+    <ul>
+      <li></li>
+    </ul>
+    <img class="logo" src="assets/images/hoodie_logo_orange_no_inner_lines.svg" alt="">
+  </header>
+  <section>
+    <div class="block">
+      <div class="content">
+        <h1>Hello there, Hoodies!</h1>
+        <p>Last Wednesday to Friday, Max, Jens and Alex met in Berlin to work on the new hood.ie that's to be relaunched with Hoodie's 1.0 beta. Our aims for these three days were to:</p>
+        <ul>
+          <li>find a new visual language and document it in a styleguide</li>
+          <li>structure all things Hoodie on the web in a useful way</li>
+          <li>make plans and draw up concepts for an on-boarding flow</li>
+        </ul>
+        <p>We didn't quite make it through, but we got a lot done.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="block">
+      <div class="content">
+        <h2><span class="index">1</span>Wednesday</h2>
+        <p>Wednesday was spent going through the relaunch google doc, evaluating, weighting and rearranging all the information we'll be offering, planning out URL structures and how the first encounter with Hoodie on hood.ie should go for different sorts of people.</p>
+        <h3>Infrastructure<span class="slash">/</span>Hosting</h3>
+        <p>We decided to stay with gh-pages as an infrastructure, since its benefits vastly outweigh anything any CMS could offer us:</p>
+        <ul>
+          <li>people can fork and PR content corrections, which has proven valuable in the past, and a CMS would really get in the way of that</li>
+          <li>we can run it on GitHub and don't have to worry about Hackernews spikes</li>
+          <li>deployment is simple and foolproof now that we've discovered grunt-gh-pages</li>
+          <li>it's less work</li>
+        </ul>
+        <p class="note">Note: We can get search via Google's Custom Search Engine or <a href="https://duckduckgo.com/search_box">DuckDuckGo's Searchbox</a>, which isn't as good though, because it's an external page and you can't style or embed it. </p>
+        <h3>Hoodie<span class="slash">/</span>Start Page</h3>
+        <p>We decided that hood.ie should function as a hub page, with many content tiles that give some indication of what lies behind them. The main focus of our energies should be the first four, which are:</p>
+        <ol>
+          <li>a header block, with title, subline, search box and video button for a 3-minute overview</li>
+          <li>a feature/testimonial block, with a bit more info about what Hoodie can do for you, and 2–3 people telling us what Hoodie did for them</li>
+          <li>a code showoff block that could use the autotyping thing I built ages ago.
+          How to Hoodie:</li>
+            <ul>
+              <li>Signing up a user</li>
+              <li>Storing private data</li>
+              <li>Retreiving data</li>
+            </ul>
+          <li>the try block. This is a bit more involved, but think of it as a flow chart:</li>
+        </ol>
+        <h3>The try-block</h3>
+        <p>It starts with "Want to try Hoodie now?" and leads to three options:</p>
+        <ol>
+          <li>Yes, but I'm in a hurry! (No installation, super quick!)</li>
+          <li>Yes, let me install it now! (You're comfy with the terminal, right?)</li>
+          <li>Hmmm, I'd like to know more first… (Ok, let us convince you)</li>
+        </ol>
+        <p>1. leads to try.hood.ie, which in turn leads to <a href="#">docs.hood.ie/tutorials/first-steps</a>.</p>
+        <p>2. leads to the installation instructions.</p>
+        <p>3. leads to <a href="#">hood.ie/technology</a>, where we explain the tech and how everything works, and then back to a choice of 1, 2 or <a href="#">docs.hood.ie</a>.</p>
+        <p>The meat is in part 2: its the installation instructions for all platforms, followed by two buttons:</p>
+        <ol>
+          <li>Yay, everything works!</li>
+          <li>Meh, something went wrong</li>
+        </ol>
+        <p>1. leads to <a href="#">docs.hood.ie/tutorials/first-steps</a></p>
+        <p>2. leads to <a href="#">hood.ie/get-help</a></p>
+        <p class="note">Note: This indicates a central idea behind the site: everything leads somewhere contextually sensible. No dead ends. </p>
+        <p>Everything else (contribute, get-help, about, technology, events-and-media, merch, contact, plugins, code-of-conduct, newsletter signup etc.) is teased via blocks of varying size, all of which should offer a glimpse of the actual content behind them.</p>
+        <h3>Special Blocks<span class="slash">/</span>Contribute</h3>
+        <p>A big, full width block, with the left 2/3s asking:</p>
+        <ul>
+          <li>You have skills and time? Contribute to the project!</li>
+          <li>You have money and vision? Sponsor a week of development!</li>
+          <li>You have a company and need rapid prototyping? Hire us!</li>
+          <li>You want to talk about Hoodie at a meetup or conference? Check out our resources.</li>
+        </ul>
+        <p>The right 1/3 is reserved for the current sponsor (or a sponsoring CTA), and could display a fairly big sponsorship logo.</p>
+        <h3>Special Blocks<span class="slash">/</span>Events and Media</h3>
+        <p>Events and Media should probably be handled via Jekyll collections, we'd need to try that out. Every event and media exposure (podcast, interview, article etc.) would be a yml-file with some metadata (date, type, place, latlon, starred, videoLink, slidesLink etc.) and a markdown description. This would allow us so build a sweet, sortable and filterable events page that would automatically know which events were in the past and future, and which one is next. It would also allow us to build an events and media block on hood.ie that shows the next event and the last podcast, as well as the total number of events, podcasts, interviews and articles.</p>
+        <p>The rest would be very simple: title, description, maybe an image, linking to a simple html page with anchors, or away to another subdomain.</p>
+        <p>Here's a very hastily assembled wireframe.</p>
+      </div>
+    </div>
+    <img src="assets/images/design_workshop_wireframe.png" alt="">
+  </section>
+  <section>
+    <div class="block">
+      <div class="content">
+        <h2><span class="index">2</span>Thursday</h2>
+        <p>Thursday was spent on design: fonts, colours, layout options, header ideas and graphical flourishes.</p>
+        <p> We're all still big fans of Bariol regular and bold as our main fonts and Courier Prime as our monospace, Jens also had another excellent choice for copy text, but loading 4 font files may turn out to be a bit much. </p>
+        <p>As for the colours, we're trying to get away from using the current logo colours together, since they do tend to clash a lot. Jens' idea was to use single-coloured versions of the logo (all orange, for example), and Max added that we could use this approach to colour-code our most important site sections.</p>
+        <p>Apart from that, we're going for warm and welcoming tones, so no white backgrounds and blue text any more. As for colour use: we want more of it, and we've got a bunch of pastel shades that work well with our choice of background and the single main colour from the logo.</p>
+        <p>We came up with some playful signature elements, such as</p>
+        <ul>
+          <li>pastel background dots and dashes that lie behind text, emphasising it or giving additional info (i.e. red dashes for warnings)</li>
+          <li>large individual elements of the logo appearing from beyond the edge of the page</li>
+          <li>a streamlined version of the logo, with less inner lines</li>
+        </ul>
+        <p>All in all, we feel like we've got a very good direction, and we're happy with our basic choices and ideas, but we're still working on pulling it all together. Here's what we've got.</p>
+        <p class="note">First, Jens' artboard that this layout is modeled after (we're not quite there yet, though):</p>
+      </div>
+    </div>
+    <img src="assets/images/artboard-2.png" alt="">
+    <div class="block">
+      <div class="content">
+        <p class="note">And my idea, after I stole some stuff from Jens:</p>
+      </div>
+    </div>
+    <img src="assets/images/espy_artboard_wide_code.png" alt="">
+    <div class="block">
+      <div class="content">
+        <p>The final thing will combine these two somehow, and this page is the first step in that direction. We still need to work through all the elements though, we don't even have buttons yet.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="block">
+      <div class="content">
+        <h2><span class="index">3</span>Friday</h2>
+        <p>Friday was spent with some refining of what we did on the first two days, plus a bit of hacking on the style guide we wanted to produce. We spent some time setting that up (gruntfile, basic colours, fonts etc.), and that's also what I used to build this document.</p>
+        <p>We thought about some additional things that could help the site in the long run:</p>
+        <ul>
+          <li>A polymer element/webcomponent for embedding bits of the doc, something like <x-hoodie-docs auto function="hoodie.store.findAll"></x-hoodie-docs>. This would simply fetch that function's doc and display it nicely. </li>
+        </ul>
+        <h2>Style Guide</h2>
+        <p>We also began work on our new style guide, to see how well our designs translated into the browser. We didn't get very far, though :)</p>
+        <p>The WIP guide follows.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="block">
+      <div class="content">
+        <h2><span class="index">1</span>Colors and their use</h2>
+        <p>The original Hoodie colours have had a good run, but they've become increasingly problematic, since it's quite hard to base designs on them. One solution is to only use one of the colours as the signal colour for the current page, the other is to go with a new, desaturated colour palette. This will let us use more colours simultaneously without being as clashy and glaring as the old coulours would have been. </p>
+        <h3>Brand Colors<span class="slash">/</span>Logo</h3>
+        <p>Colors derived from the logo.</p>
+        <p class="note">Note: These are rarely used to style other elements, since this approach has proved quite limiting. You'll notice that, when used together, they frequently clash with everything else, and even with each other. </p>
+      </div>
+    </div>
+    <div class="block">
+      <aside class="colorInfo">
+        <p>These are Hoodie's original logo colours.</p>
+      </aside>
+      <div class="content colors">
+        <span class="swatch hoodieBlue">#312783</span>
+        <span class="swatch hoodieGreen">#0B8E36</span>
+        <span class="swatch hoodieYellow">#F9B233</span>
+        <span class="swatch hoodieOrange">#E94E1B</span>
+        <span class="swatch hoodieBrown">#693C10</span>
+        <span class="swatch hoodieRed">#BE1522</span>
+      </div>
+    </div>
+    <div class="block">
+      <div class="content">
+        <h3>Pale Colours</h3>
+        <p>These are the desaturated colours used from Summer 2014 onward.</p>
+        <p>Their main use is to be used as backgrounds for text, or as highlights underneath text.</p>
+      </div>
+    </div>
+    <div class="block">
+      <aside class="colorInfo">
+        <p>You can also use these with 50% transparency underneath text.</p>
+      </aside>
+      <div class="content colors">
+        <span class="swatch paleBlue">#C2E0EB</span>
+        <span class="swatch paleGreen">#8FC2A2</span>
+        <span class="swatch paleYellow">#F7EF9D</span>
+        <span class="swatch paleOrange">#F6C28A</span>
+        <span class="swatch paleBrown">#9B8C7E</span>
+        <span class="swatch paleRed">#E0856B</span>
+      </div>
+    </div>
+    <div class="block">
+      <div class="content">
+        <h3>Type and Background Colours</h3>
+      </div>
+    </div>
+    <div class="block">
+      <div class="content colors">
+        <span class="swatch white darkText">#FFFFFF</span>
+        <span class="swatch darkGrey">#414040</span>
+        <span class="swatch nearBlack">#282726</span>
+        <span class="swatch mediumBrown">#373435</span>
+        <span class="swatch lightBeige darkBorder">#F8F5F3</span>
+      </div>
+    </div>
+  </section>
+  <!--<script src="js/main.min.js"></script>-->
+</body>
+</html>

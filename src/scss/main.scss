@@ -58,6 +58,7 @@ $paleBlue:       #C2E0EB;
 $paleGreen:      #8FC2A2;
 $paleYellow:     #F7EF9D;
 $paleOrange:     #F6C28A;
+$paleBrown:      #9B8C7E;
 $paleRed:        #E0856B;
 
 $pageBackground: $lightBeige;
@@ -74,19 +75,78 @@ $swatchDiameter: 120px;
 
 body{
   font-family: 'bariol_regular';
-  background: $pageBackground;
+  background: url(../assets/images/hoodie_fragment_right_orange.svg) no-repeat 100% 62%;
+  background-color: $pageBackground;
+  font-size: 1.25rem;
+  padding-bottom: 5em;
 }
 
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6{
+  color: $nearBlack;
+  font-family: 'bariol_bold';
+  margin-left: $outsideMargin;
+  display: inline-block;
+  &:before{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    padding: 0;
+    margin-left: calc(-3rem - 1.5em);
+    border-radius: 50%;
+    margin-top: -0.75em;
+    content: "";
+    width: 3em;
+    height: 3em;
+    background-color: transparentize($paleBlue, 0.5);
+  }
+}
+
+p{
   margin-left: $outsideMargin;
 }
 
-h1{
-  font-family: 'bariol_bold';
-  color: $nearBlack;
+ul, ol{
+  margin-left: 1em;
+}
+
+ul ul,
+ol ul{
+  list-style-type: disc;
 }
 
 // Elements
+
+header{
+  //background: url(../assets/images/hoodie_logo_orange_no_inner_lines.svg) no-repeat;
+  width: 100%;
+  //background-size: 120%;
+  //background-position: bottom center;
+  //height: 10em;
+  ul{
+    background: $hoodieOrange;
+    margin: 0;
+    height: 3rem;
+    li{
+      line-height: 3rem;
+      color: $lightBeige;
+      text-transform: uppercase;
+      display: inline;
+      margin-right: 3em;
+    }
+  }
+  .logo{
+    width: 120%;
+    margin-left: -10%;
+    margin-top: -15%;
+  }
+}
+
+section{
+  & > img{
+    width: 100%;
+    height: auto;
+  }
+}
 
 p{
   &.note{
@@ -95,37 +155,92 @@ p{
       position: absolute;
       z-index: -1;
       padding: 0 1em;
-      margin-left: -4rem;
+      margin-left: -4em;
       border-radius: 1em;
-      margin-top: -.4rem;
+      margin-top: -.4em;
       content: "";
       width: 5em;
       height: 2em;
-      background-color: $paleYellow;
+      background-color: transparentize($paleYellow, 0.5);
+    }
+  }
+}
+
+a{
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $nearBlack;
+  &:before{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    padding: 0 .5em;
+    margin-left: -.5em;
+    border-radius: 1em;
+    margin-top: -.25em;
+    content: "";
+    width: 100%;
+    height: 2em;
+    background-color: transparentize($paleBlue, 0.5);
+    transition: background .25s;
+  }
+  &:hover{
+    &:before{
+      background-color: $paleBlue;
     }
   }
 }
 
 .slash{
+  position: relative;
+  margin: 0 0.5em;
   &:before{
     display: block;
     position: absolute;
     z-index: -1;
     padding: 0 1em;
-    margin-left: -1.5rem;
+    margin-left: -1.3rem;
     border-radius: 1em;
-    margin-top: -.4rem;
+    margin-top: -.2rem;
     content: "";
-    width: 1em;
-    height: 2em;
-    background-color: $paleBlue;
-    transform: rotate(-72deg);
+    width: 0.25em;
+    height: 1.5em;
+    background-color: transparentize($paleBlue, 0.5);
+    transform: rotate(-70deg);
+    top: 0;
+    left: 0;
   }
 }
 
+.index{
+  position: relative;
+  margin: 0 1em 0 -2em;
+  text-align: center;
+  width: 1em;
+  display: inline-block;
+  /*
+  &:before{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    padding: 0;
+    margin-left: -2rem;
+    border-radius: 50%;
+    margin-top: -1.5rem;
+    content: "";
+    width: 3em;
+    height: 3em;
+    background-color: transparentize($paleBlue, 0.5);
+    top: 0;
+    left: 0;
+  }
+  */
+}
+
 .block{
-  width: 36rem;
-  margin: auto;
+  width: 46rem;
+  margin: 0 0 0 15%;
   @extend .clearfix;
   aside{
     width: 25%;
@@ -150,6 +265,13 @@ p{
   line-height: $swatchDiameter;
   text-align: center;
   margin: .5em;
+  &.darkText{
+    color: $nearBlack;
+  }
+  &.darkBorder{
+    color: $nearBlack;
+    box-shadow: inset 0px 0px 0px 4px $nearBlack;
+  }
   &.hoodieBlue{
     background-color: $hoodieBlue;
   }
@@ -167,6 +289,39 @@ p{
   }
   &.hoodieRed{
     background-color: $hoodieRed;
+  }
+  &.paleBlue{
+    background-color: $paleBlue;
+  }
+  &.paleGreen{
+    background-color: $paleGreen;
+  }
+  &.paleYellow{
+    background-color: $paleYellow;
+  }
+  &.paleOrange{
+    background-color: $paleOrange;
+  }
+  &.paleBrown{
+    background-color: $paleBrown;
+  }
+  &.paleRed{
+    background-color: $paleRed;
+  }
+  &.white{
+    background-color: $white;
+  }
+  &.darkGrey{
+    background-color: $darkGrey;
+  }
+  &.nearBlack{
+    background-color: $nearBlack;
+  }
+  &.mediumBrown{
+    background-color: $mediumBrown;
+  }
+  &.lightBeige{
+    background-color: $lightBeige;
   }
 }
 
