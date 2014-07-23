@@ -50,17 +50,22 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      basic: {
+      js: {
         src: [
-          'src/js/components/lodash/dist/lodash.js',
-          'src/js/components/jquery/jquery.min.js',
-          'src/js/components/imagesloaded/imagesloaded.pkgd.min.js',
-          'src/js/components/isInViewport/lib/isInViewport.min.js',
-          'src/js/components/jquery.scrollTo/jquery.scrollTo.min.js',
-          'src/js/components/marked/lib/marked.js',
-          'src/js/app/**/*.js'
+          'src/components/lodash/dist/lodash.js',
+          'src/components/jquery/dist/jquery.min.js',
+          'src/components/imagesloaded/imagesloaded.pkgd.min.js',
+          'src/components/isInViewport/lib/isInViewport.min.js',
+          'src/components/jquery.scrollTo/jquery.scrollTo.min.js',
+          'src/components/marked/lib/marked.js',
+          'src/components/prism/prism.js',
+          'src/app/**/*.js'
         ],
         dest: 'dist/index.min.js',
+      },
+      css: {
+        src: ['src/components/prism/themes/prism.css', 'dist/css/main.min.css'],
+        dest: 'dist/css/main.min.css'
       }
     },
 
@@ -136,7 +141,7 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('minify', ['jshint', 'uglify', 'cssmin', 'copy']);
   grunt.registerTask('onChange', ['newer:jshint', 'newer:sass', 'newer:autoprefixer:single_file', 'concat', 'newer:copy', 'notify:watch']);
-  grunt.registerTask('build', ['clean', 'jshint', 'sass', 'concat', 'copy',]);
+  grunt.registerTask('build', ['clean', 'onChange',]);
   grunt.registerTask('server', ['clean', 'connect', 'onChange', 'watch']);
   grunt.registerTask('deploy', ['build', 'gh-pages']);
 

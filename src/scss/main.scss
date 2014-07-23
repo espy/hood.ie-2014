@@ -75,9 +75,11 @@ $swatchDiameter: 120px;
 
 body{
   font-family: 'bariol_regular';
-  background: url(../assets/images/hoodie_fragment_right_orange.svg) no-repeat 100% 62%;
+  background: url(../assets/images/hoodie_fragment_right_orange.svg) no-repeat 100% 42%;
   background-color: $pageBackground;
-  font-size: 1.25rem;
+  color: $nearBlack;
+  font-size: 1.4rem;
+  line-height: 1.25em;
   padding-bottom: 5em;
 }
 
@@ -86,19 +88,39 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'bariol_bold';
   margin-left: $outsideMargin;
   display: inline-block;
+  font-weight: normal;
+  line-height: 1em;
+  width: 100%;
   &:before{
     display: block;
     position: absolute;
     z-index: -1;
     padding: 0;
-    margin-left: calc(-3rem - 1.5em);
+    margin-left: calc(-2rem - 1.6em);
     border-radius: 50%;
-    margin-top: -0.75em;
+    margin-top: -0.6em;
     content: "";
-    width: 3em;
-    height: 3em;
+    width: 2.25em;
+    height: 2.25em;
     background-color: transparentize($paleBlue, 0.5);
   }
+  &.plain:before{
+    display: none;
+  }
+}
+
+hr{
+  border: none;
+  border-bottom: 1px solid rgb(197, 176, 154);
+  margin: 2rem;
+}
+
+h1{
+  font-size: 2.25em;
+}
+
+h5, h6{
+  text-transform: uppercase;
 }
 
 p{
@@ -112,6 +134,10 @@ ul, ol{
 ul ul,
 ol ul{
   list-style-type: disc;
+}
+
+b, strong{
+  font-family: 'bariol_bold';
 }
 
 // Elements
@@ -142,9 +168,55 @@ header{
 }
 
 section{
+  &.row{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  @extend .clearfix;
   & > img{
     width: 100%;
     height: auto;
+  }
+  .half, .third{
+    border: 10px solid $pageBackground;
+    box-sizing: border-box;
+    &:hover{
+      border: 10px solid currentColor;
+      cursor: pointer;
+    }
+    .image{
+      overflow: hidden;
+    }
+  }
+  .half{
+    width: 50%;
+    display: block;
+    padding: 3rem;
+  }
+  .third{
+    width: 33.3333%;
+    display: block;
+    padding: 3rem;
+  }
+  .image{
+    padding: 0;
+  }
+  .paleOrange{
+    background-color: rgba(249, 212, 162, 0.3);
+    color: #E94E1B;
+    h1, h2, h3, h4, h5, h6{
+      margin-top: 0;
+      color: #E94E1B;
+    }
+  }
+  .paleBlue{
+    //background-color: rgba(194, 224, 235, 0.4);
+    //color: $hoodieBlue;
+    h1, h2, h3, h4, h5, h6{
+      margin-top: 0;
+      //color: $hoodieBlue;
+    }
   }
 }
 
@@ -214,11 +286,12 @@ a{
 }
 
 .index{
-  position: relative;
-  margin: 0 1em 0 -2em;
+  position: absolute;
+  margin: 0 1em 0 0;
   text-align: center;
-  width: 1em;
+  width: 2em;
   display: inline-block;
+  margin-left: calc(-2rem - 1.475em);
   /*
   &:before{
     display: block;
@@ -238,19 +311,40 @@ a{
   */
 }
 
+.fullWidthContainer{
+  width: 100%;
+  background-color: #FBFFFD;
+}
+
 .block{
-  width: 46rem;
-  margin: 0 0 0 15%;
+  width: 56rem;
+  margin: 0 0 0 10%;
   @extend .clearfix;
   aside{
-    width: 25%;
+    width: 30%;
     float: left;
     text-align: right;
-    padding-right: 1rem;
+    padding-right: 3rem;
+    font-size: 1.2rem;
+    line-height: 1.75rem;
+    margin-top: 1.5rem;
   }
   .content{
-    width: 75%;
+    width: 70%;
     float: right;
+  }
+  &.code{
+    background-color: #FBFFFD;
+    margin-bottom: 2rem;
+    aside{
+      h1, h2, h3, h4, h5, h6{
+        color: #807E7B;
+        font-size: 1em;
+        margin: 0;
+      }
+      text-align: left;
+      color: #807E7B;
+    }
   }
 }
 
@@ -322,6 +416,47 @@ a{
   }
   &.lightBeige{
     background-color: $lightBeige;
+  }
+}
+
+
+
+// Prism highlighting
+
+$strongLightBlue: #66AFE9;
+$lightGreen:      #1ABC9C;
+$darkGreen:       #149B80;
+$red:             #F22D23;
+$yellow:          #F9B233;
+
+pre[class*="language-"] {
+  padding: 1em 1em .75em 1em;
+  border: none;
+  background: #FBFFFD;
+  margin: .5em 0;
+  border-radius: .5em;
+  font-size: 1rem;
+  overflow: auto;
+  code{
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: break-word;
+  }
+  .string,
+  .attr-name{
+    color: $lightGreen;
+  }
+  .keyword,
+  .attr-value{
+    color: $strongLightBlue;
+  }
+  .boolean,
+  .number,
+  .tag{
+    color: $darkGreen;
+  }
+  & + p{
+    margin-top: 1em;
   }
 }
 
