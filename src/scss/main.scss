@@ -39,29 +39,7 @@
 
 // Colors
 
-// HoodieColors
-$hoodieBlue:     #312783;
-$hoodieGreen:    #0B8E36;
-$hoodieYellow:   #F9B233;
-$hoodieOrange:   #E94E1B;
-$hoodieBrown:    #693C10;
-$hoodieRed:      #BE1522;
-
-// Other colors:
-$white:          #FFFFFF;
-$darkGrey:       #414040;
-$nearBlack:      #282726;
-$mediumBrown:    #373435;
-$lightBeige:     #F8F5F3;
-
-$paleBlue:       #C2E0EB;
-$paleGreen:      #8FC2A2;
-$paleYellow:     #F7EF9D;
-$paleOrange:     #F6C28A;
-$paleBrown:      #9B8C7E;
-$paleRed:        #E0856B;
-
-$pageBackground: $lightBeige;
+@import "colors.scss";
 
 // Whitespace
 
@@ -459,4 +437,3 @@ pre[class*="language-"] {
     margin-top: 1em;
   }
 }
-
