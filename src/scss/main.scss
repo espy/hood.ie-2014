@@ -1,5 +1,6 @@
 @import "../components/normalize-scss/_normalize.scss";
 
+// Typefaces
 @import "fonts.scss"
 
 * {
@@ -19,6 +20,7 @@
 // Colors
 
 @import "colors.scss";
+$page-background: $hoodie-lightbeige;
 
 // Whitespace
 
@@ -33,15 +35,15 @@ $swatchDiameter: 120px;
 body{
   font-family: 'bariol_regular';
   background: url(../assets/images/hoodie_fragment_right_orange.svg) no-repeat 100% 42%;
-  background-color: $pageBackground;
-  color: $nearBlack;
+  background-color: $page-background;
+  color: $hoodie-nearblack;
   font-size: 1.4rem;
   line-height: 1.25em;
   padding-bottom: 5em;
 }
 
 h1, h2, h3, h4, h5, h6{
-  color: $nearBlack;
+  color: $hoodie-nearblack;
   font-family: 'bariol_bold';
   margin-left: $outsideMargin;
   display: inline-block;
@@ -59,7 +61,7 @@ h1, h2, h3, h4, h5, h6{
     content: "";
     width: 2.25em;
     height: 2.25em;
-    background-color: transparentize($paleBlue, 0.5);
+    background-color: transparentize($hoodie-paleblue, 0.5);
   }
   &.plain:before{
     display: none;
@@ -106,12 +108,12 @@ header{
   //background-position: bottom center;
   //height: 10em;
   ul{
-    background: $hoodieOrange;
+    background: $hoodie-orange;
     margin: 0;
     height: 3rem;
     li{
       line-height: 3rem;
-      color: $lightBeige;
+      color: $hoodie-lightbeige;
       text-transform: uppercase;
       display: inline;
       margin-right: 3em;
@@ -136,7 +138,7 @@ section{
     height: auto;
   }
   .half, .third{
-    border: 10px solid $pageBackground;
+    border: 10px solid $page-background;
     box-sizing: border-box;
     &:hover{
       border: 10px solid currentColor;
@@ -160,11 +162,11 @@ section{
     padding: 0;
   }
   .paleOrange{
-    background-color: rgba(249, 212, 162, 0.3);
-    color: #E94E1B;
+    background-color: $hoodie-paleorange;
+    color: $hoodie-orange;
     h1, h2, h3, h4, h5, h6{
       margin-top: 0;
-      color: #E94E1B;
+      color: $hoodie-orange;
     }
   }
   .paleBlue{
@@ -190,7 +192,7 @@ p{
       content: "";
       width: 5em;
       height: 2em;
-      background-color: transparentize($paleYellow, 0.5);
+      background-color: transparentize($hoodie-paleyellow, 0.5);
     }
   }
 }
@@ -324,55 +326,55 @@ a{
     box-shadow: inset 0px 0px 0px 4px $nearBlack;
   }
   &.hoodieBlue{
-    background-color: $hoodieBlue;
+    background-color: $hoodie-blue;
   }
   &.hoodieGreen{
-    background-color: $hoodieGreen;
+    background-color: $hoodie-green;
   }
   &.hoodieYellow{
-    background-color: $hoodieYellow;
+    background-color: $hoodie-yellow;
   }
   &.hoodieOrange{
-    background-color: $hoodieOrange;
+    background-color: $hoodie-orange;
   }
   &.hoodieBrown{
-    background-color: $hoodieBrown;
+    background-color: $hoodie-brown;
   }
   &.hoodieRed{
-    background-color: $hoodieRed;
+    background-color: $hoodie-red;
   }
   &.paleBlue{
-    background-color: $paleBlue;
+    background-color: $hoodie-paleblue;
   }
   &.paleGreen{
-    background-color: $paleGreen;
+    background-color: $hoodie-palegreen;
   }
   &.paleYellow{
-    background-color: $paleYellow;
+    background-color: $hoodie-paleyellow;
   }
   &.paleOrange{
-    background-color: $paleOrange;
+    background-color: $hoodie-paleorange;
   }
   &.paleBrown{
-    background-color: $paleBrown;
+    background-color: $hoodie-palebrown;
   }
   &.paleRed{
-    background-color: $paleRed;
+    background-color: $hoodie-palered;
   }
   &.white{
-    background-color: $white;
+    background-color: $hoodie-white;
   }
   &.darkGrey{
-    background-color: $darkGrey;
+    background-color: $hoodie-darkgrey;
   }
   &.nearBlack{
-    background-color: $nearBlack;
+    background-color: $hoodie-nearblack;
   }
   &.mediumBrown{
-    background-color: $mediumBrown;
+    background-color: $hoodie-mediumbrown;
   }
   &.lightBeige{
-    background-color: $lightBeige;
+    background-color: $hoodie-lightbeige;
   }
 }
 
