@@ -1,5 +1,7 @@
 # hood.ie redesign 2014
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/espy/hood.ie-2014.svg)](https://greenkeeper.io/)
+
 After you clone, please `$ npm install && bower install`.
 
 Run with `$ grunt server`, this will open the site in your default browser. You'll have livereload enabled on all `html, `scss and `js files in `src`;
